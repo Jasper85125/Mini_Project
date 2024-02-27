@@ -1,13 +1,12 @@
-public class Quest
-{
-    public int ID { get; }
-    public string Name { get; }
-    public string Description { get; }
+public class Quest{
+    public string Disciption;
+    public int Id;
+    public string Name;
 
-    public Quest(int id, string name, string description)
+    public Quest(int id, string name, string Disciption)
     {
-        ID = id;
-        Name = name;
-        Description = description;
+        this.Id = id;
+        this.Name = name;
+        this.Disciption = Disciption;
     }
 }
