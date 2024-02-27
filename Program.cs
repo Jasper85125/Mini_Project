@@ -1,3 +1,5 @@
 ﻿
-// // See https://aka.ms/new-console-template for more information
-// Console.WriteLine("You are at your home!");
+
+string =North 
+Compass compass = new("Y", "Y", "Y", "Y");
+compass.DrawCompass();
