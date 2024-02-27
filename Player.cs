@@ -11,7 +11,7 @@ public class player
         this.CurrentHitPoints = currentHitPoints;
         this.CurrentLocation = currentLocation;
         this.CurrentWeapon = currentWeapon;
-        this.MaximumHitPoints = maximumHitPoints
-        this.Name = name
+        this.MaximumHitPoints = maximumHitPoints;
+        this.Name = name;
     }
 }
