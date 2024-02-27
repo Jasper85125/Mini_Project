@@ -1,4 +1,4 @@
-﻿Monster monster = new();
+Monster monster = new();
 string input = Console.ReadLine();
 int input2 = Convert.ToInt32(input);
 int attack = 5;
