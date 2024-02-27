@@ -1,4 +1,4 @@
-public class Locations
+public class Location
 {
     public int ID;
     public string Name;
@@ -6,7 +6,7 @@ public class Locations
     public string Option_1;
     public string Option_2;
 
-    public Locations(int id, string name, string description, string option_1, string option_2)
+    public Location(int id, string name, string description, string option_1, string option_2)
     {
         this.ID = id;
         this.Name = name;
