@@ -1,6 +1,6 @@
 public class Compass
 {
-    public  static string North;
+    public string North;
     public string East;
     public string South;
     public string West;
