@@ -9,4 +9,6 @@ public class Quest{
         this.Name = name;
         this.Disciption = Disciption;
     }
+
+    
 }
