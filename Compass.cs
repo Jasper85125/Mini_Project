@@ -1,9 +1,9 @@
 public class Compass
 {
-    public string North = "Y";
-    public string East =  "Y";
-    public string South = "Y";
-    public string West = "Y";
+    public  static string North;
+    public string East;
+    public string South;
+    public string West;
 
     public Compass(string north, string east, string south, string west)
     {
