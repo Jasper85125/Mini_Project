@@ -1,7 +1,7 @@
 public static class World
 {
 
-   // public static readonly List<Weapon> Weapons = new List<Weapon>();
+    public static readonly List<Weapon> Weapons = new List<Weapon>();
     public static readonly List<Monster> Monsters = new List<Monster>();
     public static readonly List<Quest> Quests = new List<Quest>();
     public static readonly List<Location> Locations = new List<Location>();
@@ -30,34 +30,34 @@ public static class World
 
     static World()
     {
-        // PopulateWeapons();
-        // PopulateMonsters();
+        PopulateWeapons();
+        PopulateMonsters();
         PopulateQuests();
         PopulateLocations();
     }
 
 
-    // public static void PopulateWeapons()
-    // {
-    //     Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 5));
-    //     Weapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
-    // }
+    public static void PopulateWeapons()
+    {
+        Weapons.Add(new Weapon(WEAPON_ID_RUSTY_SWORD, "Rusty sword", 5));
+        Weapons.Add(new Weapon(WEAPON_ID_CLUB, "Club", 10));
+    }
 
-    // public static void PopulateMonsters()
-    // {
-    //     Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
-
-
-    //     Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
+    public static void PopulateMonsters()
+    {
+        Monster rat = new Monster(MONSTER_ID_RAT, "rat", 1, 3, 3);
 
 
-    //     Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+        Monster snake = new Monster(MONSTER_ID_SNAKE, "snake", 10, 7, 7);
 
 
-    //     Monsters.Add(rat);
-    //     Monsters.Add(snake);
-    //     Monsters.Add(giantSpider);
-    // }
+        Monster giantSpider = new Monster(MONSTER_ID_GIANT_SPIDER, "giant spider", 3, 10, 10);
+
+
+        Monsters.Add(rat);
+        Monsters.Add(snake);
+        Monsters.Add(giantSpider);
+    }
 
     public static void PopulateQuests()
     {
@@ -96,88 +96,88 @@ public static class World
         Location townSquare = new Location(LOCATION_ID_TOWN_SQUARE, "Town square", "You see a fountain.", null, null);
 
         Location alchemistHut = new Location(LOCATION_ID_ALCHEMIST_HUT, "Alchemist's hut", "There are many strange plants on the shelves.", null, null);
-        //alchemistHut.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_ALCHEMIST_GARDEN);
+        alchemistHut.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_ALCHEMIST_GARDEN);
 
         Location alchemistsGarden = new Location(LOCATION_ID_ALCHEMISTS_GARDEN, "Alchemist's garden", "Many plants are growing here.", null, null);
-        //alchemistsGarden.MonsterLivingHere = MonsterByID(MONSTER_ID_RAT);
+        alchemistsGarden.MonsterLivingHere = MonsterByID(MONSTER_ID_RAT);
 
         Location farmhouse = new Location(LOCATION_ID_FARMHOUSE, "Farmhouse", "There is a small farmhouse, with a farmer in front.", null, null);
-        //farmhouse.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_FARMERS_FIELD);
+        farmhouse.QuestAvailableHere = QuestByID(QUEST_ID_CLEAR_FARMERS_FIELD);
 
         Location farmersField = new Location(LOCATION_ID_FARM_FIELD, "Farmer's field", "You see rows of vegetables growing here.", null, null);
-        //farmersField.MonsterLivingHere = MonsterByID(MONSTER_ID_SNAKE);
+        farmersField.MonsterLivingHere = MonsterByID(MONSTER_ID_SNAKE);
 
         Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "There is a large, tough-looking guard here.", null, null);
 
         Location bridge = new Location(LOCATION_ID_BRIDGE, "Bridge", "A stone bridge crosses a wide river.", null, null);
-        //bridge.QuestAvailableHere = QuestByID(QUEST_ID_COLLECT_SPIDER_SILK);
+        bridge.QuestAvailableHere = QuestByID(QUEST_ID_COLLECT_SPIDER_SILK);
 
         Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, null);
-        //spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
+        spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
 
-        // Link the locations together
-        //home.LocationToNorth = townSquare;
+        Link the locations together
+        home.LocationToNorth = townSquare;
 
-        // townSquare.LocationToNorth = alchemistHut;
-        // townSquare.LocationToSouth = home;
-        // townSquare.LocationToEast = guardPost;
-        // townSquare.LocationToWest = farmhouse;
+        townSquare.LocationToNorth = alchemistHut;
+        townSquare.LocationToSouth = home;
+        townSquare.LocationToEast = guardPost;
+        townSquare.LocationToWest = farmhouse;
 
-        // farmhouse.LocationToEast = townSquare;
-        // farmhouse.LocationToWest = farmersField;
+        farmhouse.LocationToEast = townSquare;
+        farmhouse.LocationToWest = farmersField;
 
-        // farmersField.LocationToEast = farmhouse;
+        farmersField.LocationToEast = farmhouse;
 
-        // alchemistHut.LocationToSouth = townSquare;
-        // alchemistHut.LocationToNorth = alchemistsGarden;
+        alchemistHut.LocationToSouth = townSquare;
+        alchemistHut.LocationToNorth = alchemistsGarden;
 
-        // alchemistsGarden.LocationToSouth = alchemistHut;
+        alchemistsGarden.LocationToSouth = alchemistHut;
 
-        // guardPost.LocationToEast = bridge;
-        // guardPost.LocationToWest = townSquare;
+        guardPost.LocationToEast = bridge;
+        guardPost.LocationToWest = townSquare;
 
-        // bridge.LocationToWest = guardPost;
-        // bridge.LocationToEast = spiderField;
+        bridge.LocationToWest = guardPost;
+        bridge.LocationToEast = spiderField;
 
-        // spiderField.LocationToWest = bridge;
+        spiderField.LocationToWest = bridge;
 
-        // Add the locations to the static list
-        // Locations.Add(home);
-        // Locations.Add(townSquare);
-        // Locations.Add(guardPost);
-        // Locations.Add(alchemistHut);
-        // Locations.Add(alchemistsGarden);
-        // Locations.Add(farmhouse);
-        // Locations.Add(farmersField);
-        // Locations.Add(bridge);
-        // Locations.Add(spiderField);
+        Add the locations to the static list
+        Locations.Add(home);
+        Locations.Add(townSquare);
+        Locations.Add(guardPost);
+        Locations.Add(alchemistHut);
+        Locations.Add(alchemistsGarden);
+        Locations.Add(farmhouse);
+        Locations.Add(farmersField);
+        Locations.Add(bridge);
+        Locations.Add(spiderField);
     }
 
-    // public static Location LocationByID(int id)
-    // {
-    //     foreach (Location location in Locations)
-    //     {
-    //         if (location.ID == id)
-    //         {
-    //             return location;
-    //         }
-    //     }
+    public static Location LocationByID(int id)
+    {
+        foreach (Location location in Locations)
+        {
+            if (location.ID == id)
+            {
+                return location;
+            }
+        }
 
-    //     return null;
-    // }
+        return null;
+    }
 
-    // public static Weapon WeaponByID(int id)
-    // {
-    //     foreach (Weapon item in Weapons)
-    //     {
-    //         if (item.ID == id)
-    //         {
-    //             return item;
-    //         }
-    //     }
+    public static Weapon WeaponByID(int id)
+    {
+        foreach (Weapon item in Weapons)
+        {
+            if (item.ID == id)
+            {
+                return item;
+            }
+        }
 
-    //     return null;
-    // }
+        return null;
+    }
 
 
 
@@ -194,16 +194,16 @@ public static class World
         return null;
     }
 
-    // public static Quest QuestByID(int id)
-    // {
-    //     foreach (Quest quest in Quests)
-    //     {
-    //         if (quest.ID == id)
-    //         {
-    //             return quest;
-    //         }
-    //     }
+    public static Quest QuestByID(int id)
+    {
+        foreach (Quest quest in Quests)
+        {
+            if (quest.ID == id)
+            {
+                return quest;
+            }
+        }
 
-    //     return null;
-    // }
+        return null;
+    }
 }
