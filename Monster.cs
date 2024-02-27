@@ -1,16 +1,17 @@
 public class Monster
 {
-    public int healthpoints = 50;
-    public int attackpoints = 5;
-    public string name_monster = "Rat";
+    public int CurrentHitPoints;
+    public int ID;
+    public int MaximumDamage;
+    public int MaximumHitPoints;
+    public string Name;
 
-    public void attack(int dmg)
+    public Monster()
     {
-        healthpoints -= dmg;
-    }
-
-    public void monter_attack()
-    {
-        break;
+        this.CurrentHitPoints = CurrentHitPoints;
+        this.ID = ID;
+        this.MaximumDamage = MaximumDamage;
+        this.MaximumHitPoints = MaximumHitPoints;
+        this.Name = Name;
     }
 }
