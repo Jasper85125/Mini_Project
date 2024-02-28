@@ -209,6 +209,69 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
+            
+            // Alchemist Garden
+            while(player.CurrentLocation == 5)
+            {
+                Compass compass5 = new Compass(north: "N", east: "N", south: "Y", west: "N");
+
+                //draw compass
+                compass5.DrawCompass();
+
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You look into a garden full of strange flowers and trees \nA strange smell reminding you of medicine fills the air:");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: South -> Alchemist's Hut");
+                Console.WriteLine("3: Fight the Rats");
+                Console.WriteLine("Q to quit the game");
+                string choice5 = Console.ReadLine();
+
+                if(choice5 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice5 == "2")
+                {
+                    Console.WriteLine("As you decide to head south and go back inside the Alchemist's Hut.");
+                    player.CurrentLocation = 4;
+                }
+                else if(choice5 == "3")
+                {
+                    if(Quest1 == false && QuestActive1 == true)
+                    {
+                        Console.WriteLine("Hier moet Quest 1 komen, Type 'Y' om de Quest te 'voltooien'");
+                        string testOption = Console.ReadLine();
+
+                        if(testOption == "Y")
+                        {
+                            // Hier moet de Quest beginnen
+                            Console.WriteLine("Quest gelukt!");
+                            Quest1 = true; 
+                        }
+                        else
+                        {
+                            Console.WriteLine("Probeer het nog een keer.");
+                        }
+                    }
+                    else if (Quest1 == false && QuestActive1 == false)
+                    {
+                        Console.WriteLine("Go talk to the Alchemist");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The Rats are already dead");
+                    }
+                else if (choice5 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
 
             //FARMHOUSE
             while(player.CurrentLocation == 6)
@@ -326,9 +389,6 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
-
-
-
 
             //BRIDGE
             while(player.CurrentLocation == 8)
