@@ -15,4 +15,23 @@ public class Location
         this.Option_2 = option_2;
     }
 
+    public void LocationToNorth()
+    {
+        
+    }
+
+    public void LocationToEast()
+    {
+
+    }
+
+    public void LocationToSouth()
+    {
+
+    }
+
+    public void LocationToWest()
+    {
+        
+    }
 }

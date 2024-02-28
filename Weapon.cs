@@ -3,7 +3,7 @@ public class Weapon{
     public int ID;
     public string Name;
 
-    public Weapon(int id, string name, string MaximumDamage)
+    public Weapon(int id, string name, int MaximumDamage)
     {
         this.ID = id;
         this.Name = name;

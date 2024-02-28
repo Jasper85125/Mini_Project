@@ -6,7 +6,7 @@ public class Monster
     public int MaximumHitPoints;
     public string Name;
 
-    public Monster(int currenthitpoints, int id, int maximumdamage, int maximumhitpoints, string name)
+    public Monster(int id, string name, int maximumdamage, int maximumhitpoints, int currenthitpoints)
     {
         this.CurrentHitPoints = CurrentHitPoints;
         this.ID = ID;
