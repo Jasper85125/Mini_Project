@@ -373,8 +373,45 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
-        }
 
+            //spider field
+            while(player.CurrentLocation == 9)
+            {
+                Compass compass9 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+
+                //draw compass
+                compass9.DrawCompass();
+
+                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"you notice a weathered signpost planted in the middle of the field. \nThe sign provides directions for travelers:");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: West -> Bridge");
+                Console.WriteLine("Q to quit the game");
+                string choice9 = Console.ReadLine();
+
+                if(choice9 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice9 == "2")
+                {
+                    Console.WriteLine("As you decide to head west too the bridge, you start walking.");
+                    Console.WriteLine("Back on this spooky path!");
+                    player.CurrentLocation = 8;
+                }
+                else if (choice9 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
+        
+        }
         Console.WriteLine("The game is finished");
     }
 
