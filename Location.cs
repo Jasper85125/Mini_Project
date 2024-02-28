@@ -10,7 +10,7 @@ public class Location
     {
         this.ID = id;
         this.Name = name;
-        this.Description = Description;
+        this.Description = description;
         this.Option_1 = option_1;
         this.Option_2 = option_2;
     }
