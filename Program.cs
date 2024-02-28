@@ -548,6 +548,11 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
+            if (Quest1 && Quest2 && Quest3)
+                {
+                Console.WriteLine("Congratulations! You have completed all quests. You finished the game!");
+                keepGaming = false;
+                }
         
         }
         Console.WriteLine("The game is finished");
