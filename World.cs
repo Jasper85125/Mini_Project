@@ -115,7 +115,7 @@ public static class World
         Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Forest", "You see spider webs covering covering the trees in this forest.", null, null);
         spiderField.MonsterLivingHere = MonsterByID(MONSTER_ID_GIANT_SPIDER);
 
-        Link the locations together;
+        // Link the locations together
         home.LocationToNorth = townSquare;
 
         townSquare.LocationToNorth = alchemistHut;
@@ -141,7 +141,7 @@ public static class World
 
         spiderField.LocationToWest = bridge;
 
-        Add the locations to the static list;
+        // Add the locations to the static list
         Locations.Add(home);
         Locations.Add(townSquare);
         Locations.Add(guardPost);
