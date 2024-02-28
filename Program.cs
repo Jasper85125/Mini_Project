@@ -74,7 +74,7 @@ public static class Program
                 //draw compass
                 compass2.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("There is not much to do what do you want to do.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: North -> Alchemist Hut");
@@ -130,7 +130,7 @@ public static class Program
                 //draw compass
                 compass3.DrawCompass();
                 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("what do you want to do.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Bridge");
@@ -167,6 +167,126 @@ public static class Program
 
             }
 
+            //Alchemist`s hut
+            while(player.CurrentLocation == 4)
+            {
+                Compass compass4 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+
+                //draw compass
+                compass4.DrawCompass();
+
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"you notice a weathered signpost planted at its entrance. \nThe sign provides directions for travelers:");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: South -> Town Square");
+                Console.WriteLine("3: North -> Alchemist's Garden");
+                Console.WriteLine("4: Talk to the Alchemist");
+                Console.WriteLine("Q to quit the game");
+                string choice4 = Console.ReadLine();
+
+                if(choice4 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice4 == "2")
+                {
+                    Console.WriteLine("As you decide to head south, you start walking too Town Square.");
+                    player.CurrentLocation = 2;
+                }
+                else if(choice4 == "3")
+                {
+                    Console.WriteLine("Choosing the path north, you walk past the hut to the alchemist's garden.");
+                    Console.WriteLine("As you get closer too the alchemist's garden you see more and more flora.");
+                    player.CurrentLocation = 5;
+                }
+                else if(choice4 == "4")
+                {
+                    if(Quest1 == false){
+                        Console.WriteLine("The Alchemist gives you the following quest:");
+                        Console.WriteLine(World.QuestByID(1).Description);
+                        QuestActive1 = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You already helped the Alchemist, she is very thankfull!");
+                    }
+                }
+                else if (choice4 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
+            
+            // Alchemist Garden
+            while(player.CurrentLocation == 5)
+            {
+                Compass compass5 = new Compass(north: "N", east: "N", south: "Y", west: "N");
+
+                //draw compass
+                compass5.DrawCompass();
+
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You look into a garden full of strange flowers and trees \nA strange smell reminding you of medicine fills the air:");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: South -> Alchemist's Hut");
+                Console.WriteLine("3: Fight the Rats");
+                Console.WriteLine("Q to quit the game");
+                string choice5 = Console.ReadLine();
+
+                if(choice5 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice5 == "2")
+                {
+                    Console.WriteLine("As you decide to head south and go back inside the Alchemist's Hut.");
+                    player.CurrentLocation = 4;
+                }
+                else if(choice5 == "3")
+                {
+                    if(Quest1 == false && QuestActive1 == true)
+                    {
+                        Console.WriteLine("Hier moet Quest 1 komen, Type 'Y' om de Quest te 'voltooien'");
+                        string testOption = Console.ReadLine();
+
+                        if(testOption == "Y")
+                        {
+                            // Hier moet de Quest beginnen
+                            Console.WriteLine("Quest gelukt!");
+                            Quest1 = true; 
+                        }
+                        else
+                        {
+                            Console.WriteLine("Probeer het nog een keer.");
+                        }
+                    }
+                    else if (Quest1 == false && QuestActive1 == false)
+                    {
+                        Console.WriteLine("Go talk to the Alchemist");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The Rats are already dead");
+                    }
+                }
+                else if (choice5 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
+
             //FARMHOUSE
             while(player.CurrentLocation == 6)
             {
@@ -175,7 +295,7 @@ public static class Program
                 //draw compass
                 compass6.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("There is a man standing outside, it looks like he needs your help.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Town Square");
@@ -232,7 +352,7 @@ public static class Program
                 //draw compass
                 compass7.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine($"You walk into a big field");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Farmhouse");
@@ -311,10 +431,7 @@ public static class Program
                 }
             }
 
-
-
-
-            //BRIDGE
+           //BRIDGE
             while(player.CurrentLocation == 8)
             {
                 Compass compass8 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
@@ -322,11 +439,12 @@ public static class Program
                 //draw compass
                 compass8.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine($"you notice a weathered signpost planted at its entrance. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Guard Post");
                 Console.WriteLine("3: East -> Spider Field");
+                Console.WriteLine("4: Talk to the woman");
                 Console.WriteLine("Q to quit the game");
                 string choice8 = Console.ReadLine();
 
@@ -339,13 +457,25 @@ public static class Program
                 {
                     Console.WriteLine("As you decide to head west across the creaky bridge, the atmosphere changes subtly.");
                     Console.WriteLine("The path leads you through a dense path.");
-                    player.CurrentLocation = 7;
+                    player.CurrentLocation = 3;
                 }
                 else if(choice8 == "3")
                 {
                     Console.WriteLine("Choosing the spooky path east, you walk across the creaky bridge.");
                     Console.WriteLine("As you get closer too the spider field you start noticing more and more tangled spider webs!");
                     player.CurrentLocation = 9;
+                }
+                else if(choice8 == "4")
+                {
+                    if(Quest3 == false){
+                        Console.WriteLine("The woman gives you the following quest:");
+                        Console.WriteLine(World.QuestByID(3).Description);
+                        QuestActive3 = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You already helped the woman, she is very thankfull!");
+                    }
                 }
                 else if (choice8 == "Q")
                 {
@@ -357,8 +487,69 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
-        }
 
+            //spider field
+            while(player.CurrentLocation == 9)
+            {
+                Compass compass9 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+
+                //draw compass
+                compass9.DrawCompass();
+
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"you notice a weathered signpost planted in the middle of the field. \nThe sign provides directions for travelers:");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: West -> Bridge");
+                Console.WriteLine("3: Fight the spider!");
+                Console.WriteLine("Q to quit the game");
+                string choice9 = Console.ReadLine();
+
+                if(choice9 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice9 == "2")
+                {
+                    Console.WriteLine("As you decide to head west too the bridge, you start walking.");
+                    Console.WriteLine("Back on this spooky path!");
+                    player.CurrentLocation = 8;
+                }
+                else if(choice9 == "2")
+                {
+                    if(Quest3 == false && QuestActive3 == true){
+                        Console.WriteLine("Hier moet Quest 3 komen, Type 'Y' om de Quest te 'voltooien'");
+                        string testOption = Console.ReadLine();
+
+                        if(testOption == "Y"){
+                            // Hier moet de Quest beginnen
+                            Console.WriteLine("Quest gelukt!");
+                            Quest3 = true; 
+                        }
+                        else{
+                            Console.WriteLine("Probeer het nog een keer.");
+                        }
+                    }
+                    else if(Quest3 == false && QuestActive3 == false)
+                    {
+                        Console.WriteLine("Go talk to the woman");
+                    }
+                    else{
+                        Console.WriteLine("The spider is already dead");
+                    }
+                }
+                else if (choice9 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
+        
+        }
         Console.WriteLine("The game is finished");
     }
 
