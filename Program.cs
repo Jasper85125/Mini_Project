@@ -375,7 +375,7 @@ public static class Program
                     if(Quest2 == false && QuestActive2 == true){
                         Monster snake = World.MonsterByID(2);
                         Weapon sword = World.WeaponByID(1);
-                        while(snake.CurrentHitPoints > 0 && player.CurrentHitPoints < 0)
+                        while(snake.CurrentHitPoints > 0 && player.CurrentHitPoints > 0)
                         {
                             Console.WriteLine($"You see a {snake.Name}");
                             Console.WriteLine($"The {snake.Name} has {snake.CurrentHitPoints}");
