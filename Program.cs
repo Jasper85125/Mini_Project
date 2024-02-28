@@ -180,7 +180,7 @@ public static class Program
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: South -> Town Square");
                 Console.WriteLine("3: North -> Alchemist's Garden");
-                Console.WriteLine("3: Talk to the Alchemist");
+                Console.WriteLine("4: Talk to the Alchemist");
                 Console.WriteLine("Q to quit the game");
                 string choice4 = Console.ReadLine();
 
@@ -203,7 +203,7 @@ public static class Program
                 else if(choice4 == "4")
                 {
                     if(Quest1 == false){
-                        Console.WriteLine("The goblin gives you the following quest:");
+                        Console.WriteLine("The Alchemist gives you the following quest:");
                         Console.WriteLine(World.QuestByID(1).Description);
                         QuestActive1 = true;
                     }
