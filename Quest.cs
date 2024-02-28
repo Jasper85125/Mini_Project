@@ -1,11 +1,11 @@
 public class Quest{
     public string Disciption;
-    public int Id;
+    public int ID;
     public string Name;
 
     public Quest(int id, string name, string Disciption)
     {
-        this.Id = id;
+        this.ID = id;
         this.Name = name;
         this.Disciption = Disciption;
     }
