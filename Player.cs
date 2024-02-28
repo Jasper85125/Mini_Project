@@ -7,10 +7,9 @@ public class Player
     public string MaximumHitPoints;
     public string Name;
 
-    public Player(int currentHitPoints, int currentHealthPotions, string currentLocation, string currentWeapon, string maximumHitPoints, string name)
+    public Player(int currentHitPoints, string currentLocation, string currentWeapon, string maximumHitPoints, string name)
     {
         this.CurrentHitPoints = currentHitPoints;
-        this.CurrentHealthPotions = currentHealthPotions;
         this.CurrentLocation = currentLocation;
         this.CurrentWeapon = currentWeapon;
         this.MaximumHitPoints = maximumHitPoints;

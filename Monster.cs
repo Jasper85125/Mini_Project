@@ -17,7 +17,7 @@ public class Monster
 
     public string Monster_attack_player(Player player)
     {
-        player.currentHealthPotions -= MaximumDamage;
+        player.currentHitPoints -= MaximumDamage;
         return $"The monster did {MaximumDamage} to you";
     }
 
