@@ -1,4 +1,4 @@
-public class player
+public class Player
 {
     public int CurrentHitPoints;
     public int CurrentHealthPotions;
@@ -7,7 +7,7 @@ public class player
     public string MaximumHitPoints;
     public string Name;
 
-    public player(int currentHitPoints, int currentHealthPotions, string currentLocation, string currentWeapon, string maximumHitPoints, string name)
+    public Player(int currentHitPoints, int currentHealthPotions, string currentLocation, string currentWeapon, string maximumHitPoints, string name)
     {
         this.CurrentHitPoints = currentHitPoints;
         this.CurrentHealthPotions = currentHealthPotions;
