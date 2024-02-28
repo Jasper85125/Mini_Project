@@ -18,12 +18,12 @@ public class Monster
     public string Monster_attack_player(Player player)
     {
         player.currentHealthPotions -= MaximumDamage;
-        return $"The monster did {MaximumDamage} to you"
+        return $"The monster did {MaximumDamage} to you";
     }
 
     public string player_attack_monster(Weapon weapon)
     {
         CurrentHitPoints -= weapon.MaximumDamage;
-        return $"You did {weapon.MaximumDamage} damage to the monster"
+        return $"You did {weapon.MaximumDamage} damage to the monster";
     }
 }
