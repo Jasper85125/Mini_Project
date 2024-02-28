@@ -170,7 +170,7 @@ public static class Program
             //Alchemist`s hut
             while(player.CurrentLocation == 4)
             {
-                Compass compass4 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+                Compass compass4 = new Compass(north: "Y", east: "N", south: "Y", west: "N");
 
                 //draw compass
                 compass4.DrawCompass();
@@ -491,7 +491,7 @@ public static class Program
             //spider field
             while(player.CurrentLocation == 9)
             {
-                Compass compass9 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+                Compass compass9 = new Compass(north: "N", east: "N", south: "N", west: "Y");
 
                 //draw compass
                 compass9.DrawCompass();
