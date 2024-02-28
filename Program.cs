@@ -23,13 +23,14 @@ public static class Program
             compass1.DrawCompass();
 
             //start the writing
-            Console.WriteLine($"You are currently {home.Name} what would you like to do.");
+            Console.WriteLine($"You are currently home what would you like to do.");
             Console.WriteLine("1: look around");
             Console.WriteLine("2: leave the house");
             Console.WriteLine("3: go back to bed");
             string choice1 = Console.ReadLine();
             if(choice1 == "1")
             {
+                // returns the locations
                 Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
             }
             else if(choice1 == "2")
@@ -47,13 +48,7 @@ public static class Program
                 Console.WriteLine("That is not a valid input");
             }
         }
-        
-
-        GoNorth = "Y";
-        GoEast = "Y";
-        GoSouth = "Y";
-        GoWest = "Y";
-        Compass compass2 = new Compass(north: GoNorth, east: GoEast, south: GoSouth, west: GoWest);
+        Compass compass2 = new Compass(north: "Y", east: "Y", south: "Y", west: "Y");
         compass2.DrawCompass();
 
         Location Town = new Location(2, "Town square", "You see a fountain.", null, null);
