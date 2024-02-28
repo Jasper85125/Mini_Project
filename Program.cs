@@ -378,7 +378,7 @@ public static class Program
                         while(snake.CurrentHitPoints > 0 && player.CurrentHitPoints > 0)
                         {
                             Console.WriteLine($"You see a {snake.Name}");
-                            Console.WriteLine($"The {snake.Name} has {snake.CurrentHitPoints}");
+                            Console.WriteLine($"The {snake.Name} has {snake.CurrentHitPoints} hit points");
                             Console.WriteLine($"You have {player.CurrentHitPoints} hit points");
                             Console.WriteLine("What would you like to do");
                             Console.WriteLine("1: Attack the monster");
@@ -548,6 +548,11 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
+            if (Quest1 && Quest2 && Quest3)
+                {
+                Console.WriteLine("Congratulations! You have completed all quests. You finished the game!");
+                keepGaming = false;
+                }
         
         }
         Console.WriteLine("The game is finished");
