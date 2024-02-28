@@ -114,7 +114,7 @@ public static class Program
                 }
             }
 
-
+            //GUARD_POST
             while(player.CurrentLocation == 3)
             {
                 Compass compass3 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
