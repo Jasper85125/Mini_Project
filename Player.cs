@@ -14,4 +14,9 @@ public class Player
         this.MaximumHitPoints = maximumHitPoints;
         this.Name = name;
     }
+
+    public override string ToString()
+    {
+        return $"{CurrentLocation}";
+    }
 }
