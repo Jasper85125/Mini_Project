@@ -1,12 +1,12 @@
 public class Player
 {
     public int CurrentHitPoints;
-    public string CurrentLocation;
-    public string CurrentWeapon;
-    public string MaximumHitPoints;
+    public int CurrentLocation;
+    public int CurrentWeapon;
+    public int MaximumHitPoints;
     public string Name;
 
-    public Player(int currentHitPoints, string currentLocation, string currentWeapon, string maximumHitPoints, string name)
+    public Player(int currentHitPoints, int currentLocation, int currentWeapon, int maximumHitPoints, string name)
     {
         this.CurrentHitPoints = currentHitPoints;
         this.CurrentLocation = currentLocation;
