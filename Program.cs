@@ -378,7 +378,7 @@ public static class Program
                         while(snake.CurrentHitPoints > 0 && player.CurrentHitPoints > 0)
                         {
                             Console.WriteLine($"You see a {snake.Name}");
-                            Console.WriteLine($"The {snake.Name} has {snake.CurrentHitPoints}");
+                            Console.WriteLine($"The {snake.Name} has {snake.CurrentHitPoints} hit points");
                             Console.WriteLine($"You have {player.CurrentHitPoints} hit points");
                             Console.WriteLine("What would you like to do");
                             Console.WriteLine("1: Attack the monster");
