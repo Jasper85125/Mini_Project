@@ -386,14 +386,14 @@ public static class Program
                             string choice = Console.ReadLine();
                             if(choice == "1")
                             {
-                                Console.WriteLine($"You attack the monster and deal {sword.MaximumDamage}")
-                                Console.WriteLine($"The {snake.Name} attacked you back and deals {snake.MaximumDamage} points of damage")
+                                Console.WriteLine($"You attack the monster and deal {sword.MaximumDamage}");
+                                Console.WriteLine($"The {snake.Name} attacked you back and deals {snake.MaximumDamage} points of damage");
                                 snake.Monster_attack_player(player);
-                                snake.player_attack_monster(player);
+                                snake.player_attack_monster(sword);
                             }
                             else if(choice == "2")
                             {
-                                player.CurrentHitPoints += 5
+                                player.CurrentHitPoints += 5;
                             }
                             else
                             {
