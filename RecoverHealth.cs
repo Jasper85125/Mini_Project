@@ -16,6 +16,10 @@ public class RecoverHealth
     public (int, int) UseHealthPotion()
     {
         CurrentHitPoints += HealthPerPotion;    //The potion healing mechanic
+        if(CurrentHitPoints > MaximumHitPoints)
+        {
+            CurrentHitPoints = MaximumHitPoints;
+        }
         CurrentHealthPotions--;                 //corrects the amount of potions
         return (CurrentHitPoints, CurrentHealthPotions);
     }
