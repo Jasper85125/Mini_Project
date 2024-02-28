@@ -11,7 +11,7 @@ public static class Program
 
         Console.WriteLine("Welcome to our game what is your name.");
         string name_of_player = Console.ReadLine();
-        Player player = new(100, 1, 1, 100, name_of_player);
+        Player player = new(100, 6, 1, 100, name_of_player);
 
         Console.WriteLine($"Welcome {player.Name}");
 
@@ -515,7 +515,7 @@ public static class Program
                     Console.WriteLine("Back on this spooky path!");
                     player.CurrentLocation = 8;
                 }
-                else if(choice9 == "2")
+                else if(choice9 == "3")
                 {
                     if(Quest3 == false && QuestActive3 == true){
                         Console.WriteLine("Hier moet Quest 3 komen, Type 'Y' om de Quest te 'voltooien'");
