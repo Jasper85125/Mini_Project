@@ -11,7 +11,7 @@ public static class Program
 
         Console.WriteLine("Welcome to our game what is your name.");
         string name_of_player = Console.ReadLine();
-        Player player = new(100, 1, 1, 100, name_of_player);
+        Player player = new(100, 6, 1, 100, name_of_player);
 
         Console.WriteLine($"Welcome {player.Name}");
 
@@ -347,7 +347,7 @@ public static class Program
             //FARMER'S FIELD
             while(player.CurrentLocation == 7)
             {
-                Compass compass7 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+                Compass compass7 = new Compass(north: "N", east: "Y", south: "N", west: "N");
 
                 //draw compass
                 compass7.DrawCompass();
