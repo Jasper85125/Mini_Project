@@ -167,6 +167,49 @@ public static class Program
 
             }
 
+            //Alchemist`s hut
+            while(player.CurrentLocation == 4)
+            {
+                Compass compass4 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+
+                //draw compass
+                compass4.DrawCompass();
+
+                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"you notice a weathered signpost planted at its entrance. \nThe sign provides directions for travelers:");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: South -> Town Square");
+                Console.WriteLine("3: North -> Alchemist's Garden");
+                Console.WriteLine("Q to quit the game");
+                string choice4 = Console.ReadLine();
+
+                if(choice4 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice4 == "2")
+                {
+                    Console.WriteLine("As you decide to head south, you start walking too Town Square.");
+                    player.CurrentLocation = 2;
+                }
+                else if(choice4 == "3")
+                {
+                    Console.WriteLine("Choosing the path north, you walk past the hut to the alchemist's garden.");
+                    Console.WriteLine("As you get closer too the alchemist's garden you see more and more flora.");
+                    player.CurrentLocation = 5;
+                }
+                else if (choice4 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
+
             //FARMHOUSE
             while(player.CurrentLocation == 6)
             {
@@ -311,7 +354,7 @@ public static class Program
                 {
                     Console.WriteLine("As you decide to head west across the creaky bridge, the atmosphere changes subtly.");
                     Console.WriteLine("The path leads you through a dense path.");
-                    player.CurrentLocation = 7;
+                    player.CurrentLocation = 3;
                 }
                 else if(choice8 == "3")
                 {
