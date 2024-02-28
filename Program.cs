@@ -6,17 +6,13 @@ public static class Program
     public static void Main()
     {
         //make compass
-        string GoNorth = "Y";
-        string GoEast = "N";
-        string GoSouth = "N";
-        string GoWest = "N";
-        Compass compass = new Compass(north: GoNorth, east: GoEast, south: GoSouth, west: GoWest);
+        Compass compass1 = new Compass(north: "Y", east: "N", south: "N", west: "N");
 
-        Console.WriteLine("Welkome to our game what is your name.");
+        Console.WriteLine("Welcome to our game what is your name.");
         string name_of_player = Console.ReadLine();
         Player player = new(5, 1, 1, 10, name_of_player);
 
-        Console.WriteLine($"Welkome {player.Name}");
+        Console.WriteLine($"Welcome {player.Name}");
 
         while(player.CurrentLocation == 1)
         {
@@ -24,7 +20,7 @@ public static class Program
             //Location home = new Location(1, "Home", "Your house. You really need to clean up the place.", null, null);
 
             //draw compass
-            compass.DrawCompass();
+            compass1.DrawCompass();
 
             //start the writing
             Console.WriteLine("You are currently home what would you like to do.");
@@ -34,12 +30,12 @@ public static class Program
             string choice1 = Console.ReadLine();
             if(choice1 == "1")
             {
-                Console.WriteLine(home.Description);
+                Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
             }
             else if(choice1 == "2")
             {
                 Console.WriteLine("you open the door and walk to Town square");
-                home.LocationToNorth;
+                //World.LocationByID(player.CurrentLocation.LocationToNorth);
                 Console.WriteLine(player.CurrentLocation);
             }
             else if(choice1 == "3")
