@@ -12,6 +12,8 @@ public class Location
     public Location LocationToEast;
     public Location LocationToSouth;
     public Location LocationToWest;
+    public Monster MonsterLivingHere;
+    public Quest QuestAvailableHere;
 
     public Location(int id, string name, string description, string option_1, string option_2)
     {
