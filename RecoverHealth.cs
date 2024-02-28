@@ -13,15 +13,17 @@ public class RecoverHealth
         this.HealthPerPotion = healthPerPotion;
     }
 
-    public void UseHealthPotion()
+    public (int, int) UseHealthPotion()
     {
         CurrentHitPoints += HealthPerPotion;
         CurrentHealthPotions--;
-        return CurrentHitPoints, CurrentHealthPotions;
+        return (CurrentHitPoints, CurrentHealthPotions);
     }
 
-    public void RestAtCamp()
+    public int RestAtCamp()
     {
+        CurrentHitPoints = MaximumHitPoints;
+        return CurrentHitPoints;
         // Implementation for resting at camp
     }
 }
