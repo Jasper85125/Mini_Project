@@ -375,10 +375,10 @@ public static class Program
                     if(Quest2 == false && QuestActive2 == true){
                         Monster snake = World.MonsterByID(2);
                         Weapon sword = World.WeaponByID(1);
-                        while(snake.CurrentHealthPotions <= 0)
+                        while(snake.CurrentHitPoints > 0 && player.CurrentHitPoints < 0)
                         {
                             Console.WriteLine($"You see a {snake.Name}");
-                            Console.WriteLine($"The {snake.Name} has {snake.CurrentHealthPotions}");
+                            Console.WriteLine($"The {snake.Name} has {snake.CurrentHitPoints}");
                             Console.WriteLine($"You have {player.CurrentHitPoints} hit points");
                             Console.WriteLine("What would you like to do");
                             Console.WriteLine("1: Attack the monster");
@@ -393,7 +393,7 @@ public static class Program
                             }
                             else if(choice == "2")
                             {
-                                player.CurrentHealthPotions += 5
+                                player.CurrentHitPoints += 5
                             }
                             else
                             {
@@ -403,9 +403,9 @@ public static class Program
                         // Console.WriteLine("Hier moet Quest 2 komen, Type 'Y' om de Quest te 'voltooien'");
                         // string testOption = Console.ReadLine();
 
-                        if(testOption == "Y"){
+                        if(snake.CurrentHitPoints <= 0){
                             // Hier moet de Quest beginnen
-                            Console.WriteLine("Quest gelukt!");
+                            Console.WriteLine($"{snake.Name} has been defeted");
                             Quest2 = true; 
                         }
                         else{
