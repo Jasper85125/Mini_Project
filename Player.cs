@@ -1,7 +1,6 @@
 public class Player
 {
     public int CurrentHitPoints;
-    public int CurrentHealthPotions;
     public string CurrentLocation;
     public string CurrentWeapon;
     public string MaximumHitPoints;
