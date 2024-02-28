@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 public static class Program
 {
@@ -14,7 +15,8 @@ public static class Program
 
         Console.WriteLine($"Welcome {player.Name}");
 
-        while(true)
+        bool keepGaming = true; 
+        while(keepGaming)
         {
             //HOME
             while(player.CurrentLocation == 1)
@@ -27,7 +29,9 @@ public static class Program
                 Console.WriteLine("1: look around");
                 Console.WriteLine("2: leave the house");
                 Console.WriteLine("3: go back to bed");
+                Console.WriteLine("Q to quit the game");
                 string choice1 = Console.ReadLine();
+
                 if(choice1 == "1")
                 {
                     // returns the locations
@@ -42,6 +46,11 @@ public static class Program
                 else if(choice1 == "3")
                 {
                     Console.WriteLine("You go back to bed, but cant sleep better go do somting");
+                }
+                else if (choice1 == "Q")
+                {
+                    keepGaming = false;
+                    break;
                 }
                 else
                 {
@@ -64,6 +73,7 @@ public static class Program
                 Console.WriteLine("3: East -> Guard Post");
                 Console.WriteLine("4: South -> Home");
                 Console.WriteLine("5: West -> Farm House");
+                Console.WriteLine("Q to quit the game");
                 string choice1 = Console.ReadLine();
                 if(choice1 == "1")
                 {
@@ -93,6 +103,11 @@ public static class Program
                     player.CurrentLocation = 6;
                     break;
                 }
+                else if(choice1 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("That is not a valid input");
@@ -103,15 +118,18 @@ public static class Program
             while(player.CurrentLocation == 3)
             {
                 Compass compass3 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
-                compass3.DrawCompass();
 
+                //draw compass
+                compass3.DrawCompass();
+                
                 Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("what do you want to do.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Bridge");
                 Console.WriteLine("3: West -> Town square");
-
+                Console.WriteLine("Q to quit the game");
                 string choice3 = Console.ReadLine();
+
                 if(choice3 == "1")
                 {
                     // returns the locations
@@ -129,10 +147,16 @@ public static class Program
                     Console.WriteLine("You leave the Guard post and go to Town square");
                     player.CurrentLocation = 2;
                 }
+                else if (choice3 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("That is not a valid input");
                 }
+
             }
 
             //FARMHOUSE
@@ -149,7 +173,9 @@ public static class Program
                 Console.WriteLine("2: East -> Town Square");
                 Console.WriteLine("3: West -> Farmer's Field");
                 Console.WriteLine("4: Talk to the man");
+                Console.WriteLine("Q to quit the game");
                 string choice1 = Console.ReadLine();
+
                 if(choice1 == "1")
                 {
                     // returns the locations
@@ -171,6 +197,11 @@ public static class Program
                 {
                     Console.WriteLine("Hier krijgt de user een dikke vette quest");
                 }
+                else if (choice3 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("That is not a valid input");
@@ -185,11 +216,12 @@ public static class Program
                 //draw compass
                 compass8.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.")
-                Console.WriteLine($"you notice a weathered signpost planted at its entrance. n\The sign provides directions for travelers:");
+                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"you notice a weathered signpost planted at its entrance. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Guard Post");
                 Console.WriteLine("3: East -> Spider Field");
+                Console.WriteLine("Q to quit the game");
                 string choice8 = Console.ReadLine();
 
                 if(choice8 == "1")
@@ -209,13 +241,19 @@ public static class Program
                     Console.WriteLine("As you get closer too the spider field you start noticing more and more tangled spider webs!");
                     player.CurrentLocation = 9;
                 }
+                else if (choice3 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("That is not a valid input");
                 }
             }
-
-
         }
+
+        Console.WriteLine("The game is finished");
     }
+
 }
