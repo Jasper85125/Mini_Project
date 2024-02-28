@@ -275,6 +275,7 @@ public static class Program
                     {
                         Console.WriteLine("The Rats are already dead");
                     }
+                }
                 else if (choice5 == "Q")
                 {
                     keepGaming = false;
