@@ -390,7 +390,7 @@ public static class Program
                 }
             }
 
-            //BRIDGE
+           //BRIDGE
             while(player.CurrentLocation == 8)
             {
                 Compass compass8 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
@@ -403,6 +403,7 @@ public static class Program
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Guard Post");
                 Console.WriteLine("3: East -> Spider Field");
+                Console.WriteLine("4: Talk to the woman");
                 Console.WriteLine("Q to quit the game");
                 string choice8 = Console.ReadLine();
 
@@ -422,6 +423,18 @@ public static class Program
                     Console.WriteLine("Choosing the spooky path east, you walk across the creaky bridge.");
                     Console.WriteLine("As you get closer too the spider field you start noticing more and more tangled spider webs!");
                     player.CurrentLocation = 9;
+                }
+                else if(choice8 == "4")
+                {
+                    if(Quest3 == false){
+                        Console.WriteLine("The woman gives you the following quest:");
+                        Console.WriteLine(World.QuestByID(2).Description);
+                        QuestActive3 = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You already helped the woman, she is very thankfull!");
+                    }
                 }
                 else if (choice8 == "Q")
                 {
@@ -446,6 +459,7 @@ public static class Program
                 Console.WriteLine($"you notice a weathered signpost planted in the middle of the field. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Bridge");
+                Console.WriteLine("3: Fight the rats!");
                 Console.WriteLine("Q to quit the game");
                 string choice9 = Console.ReadLine();
 
@@ -459,6 +473,29 @@ public static class Program
                     Console.WriteLine("As you decide to head west too the bridge, you start walking.");
                     Console.WriteLine("Back on this spooky path!");
                     player.CurrentLocation = 8;
+                }
+                else if(choice9 == "2")
+                {
+                    if(Quest3 == false && QuestActive3 == true){
+                        Console.WriteLine("Hier moet Quest 3 komen, Type 'Y' om de Quest te 'voltooien'");
+                        string testOption = Console.ReadLine();
+
+                        if(testOption == "Y"){
+                            // Hier moet de Quest beginnen
+                            Console.WriteLine("Quest gelukt!");
+                            Quest3 = true; 
+                        }
+                        else{
+                            Console.WriteLine("Probeer het nog een keer.");
+                        }
+                    }
+                    else if(Quest3 == false && QuestActive3 == false)
+                    {
+                        Console.WriteLine("Go talk to the woman");
+                    }
+                    else{
+                        Console.WriteLine("The rats are already dead");
+                    }
                 }
                 else if (choice9 == "Q")
                 {
