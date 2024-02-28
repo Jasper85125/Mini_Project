@@ -27,7 +27,7 @@ public static class Program
             compass.DrawCompass();
 
             //start the writing
-            Console.WriteLine("You are currently home what would you like to do.");
+            Console.WriteLine($"You are currently {home.Name} what would you like to do.");
             Console.WriteLine("1: look around");
             Console.WriteLine("2: leave the house");
             Console.WriteLine("3: go back to bed");
