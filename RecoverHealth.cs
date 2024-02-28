@@ -15,14 +15,14 @@ public class RecoverHealth
 
     public (int, int) UseHealthPotion()
     {
-        CurrentHitPoints += HealthPerPotion;
-        CurrentHealthPotions--;
+        CurrentHitPoints += HealthPerPotion;    //The potion healing mechanic
+        CurrentHealthPotions--;                 //corrects the amount of potions
         return (CurrentHitPoints, CurrentHealthPotions);
     }
 
     public int RestAtCamp()
     {
-        CurrentHitPoints = MaximumHitPoints;
+        CurrentHitPoints = MaximumHitPoints;    //reset health to max health
         return CurrentHitPoints;
         // Implementation for resting at camp
     }
