@@ -1,11 +1,11 @@
-public class superadventure
+public class SuperAdventure
 {
-    public int CurrentMonster;
-    public string ThePlayer;
+    public Monster CurrentMonster;
+    public Player Player;
 
-    public superadventure(int currentmonster, string theplayer)
+    public SuperAdventure(Monster currentmonster, Player player)
     {
         this.CurrentMonster = currentmonster;
-        this.ThePlayer = theplayer;
+        this.Player = player;
     }
 }

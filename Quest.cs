@@ -1,4 +1,5 @@
-public class Quest{
+public class Quest
+{
     public string Disciption;
     public int ID;
     public string Name;
@@ -9,6 +10,7 @@ public class Quest{
         this.ID = id;
         this.Name = name;
         this.Disciption = Disciption;
+        this.QuestCompleted = false;
     }
 
 }
