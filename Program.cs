@@ -180,6 +180,7 @@ public static class Program
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: South -> Town Square");
                 Console.WriteLine("3: North -> Alchemist's Garden");
+                Console.WriteLine("3: Talk to the Alchemist");
                 Console.WriteLine("Q to quit the game");
                 string choice4 = Console.ReadLine();
 
@@ -198,6 +199,18 @@ public static class Program
                     Console.WriteLine("Choosing the path north, you walk past the hut to the alchemist's garden.");
                     Console.WriteLine("As you get closer too the alchemist's garden you see more and more flora.");
                     player.CurrentLocation = 5;
+                }
+                else if(choice4 == "4")
+                {
+                    if(Quest1 == false){
+                        Console.WriteLine("The goblin gives you the following quest:");
+                        Console.WriteLine(World.QuestByID(1).Description);
+                        QuestActive1 = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You already helped the Alchemist, she is very thankfull!");
+                    }
                 }
                 else if (choice4 == "Q")
                 {
@@ -428,7 +441,7 @@ public static class Program
                 {
                     if(Quest3 == false){
                         Console.WriteLine("The woman gives you the following quest:");
-                        Console.WriteLine(World.QuestByID(2).Description);
+                        Console.WriteLine(World.QuestByID(3).Description);
                         QuestActive3 = true;
                     }
                     else
@@ -459,7 +472,7 @@ public static class Program
                 Console.WriteLine($"you notice a weathered signpost planted in the middle of the field. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Bridge");
-                Console.WriteLine("3: Fight the rats!");
+                Console.WriteLine("3: Fight the spider!");
                 Console.WriteLine("Q to quit the game");
                 string choice9 = Console.ReadLine();
 
@@ -494,7 +507,7 @@ public static class Program
                         Console.WriteLine("Go talk to the woman");
                     }
                     else{
-                        Console.WriteLine("The rats are already dead");
+                        Console.WriteLine("The spider is already dead");
                     }
                 }
                 else if (choice9 == "Q")
