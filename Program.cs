@@ -74,7 +74,7 @@ public static class Program
                 //draw compass
                 compass2.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("There is not much to do what do you want to do.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: North -> Alchemist Hut");
@@ -130,7 +130,7 @@ public static class Program
                 //draw compass
                 compass3.DrawCompass();
                 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("what do you want to do.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Bridge");
@@ -175,7 +175,7 @@ public static class Program
                 //draw compass
                 compass4.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine($"you notice a weathered signpost planted at its entrance. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: South -> Town Square");
@@ -295,7 +295,7 @@ public static class Program
                 //draw compass
                 compass6.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine("There is a man standing outside, it looks like he needs your help.");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Town Square");
@@ -352,7 +352,7 @@ public static class Program
                 //draw compass
                 compass7.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine($"You walk into a big field");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: East -> Farmhouse");
@@ -412,7 +412,7 @@ public static class Program
                 //draw compass
                 compass8.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine($"you notice a weathered signpost planted at its entrance. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Guard Post");
@@ -469,7 +469,7 @@ public static class Program
                 //draw compass
                 compass9.DrawCompass();
 
-                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You arrive at the {World.LocationByID(player.CurrentLocation).Name}.");
                 Console.WriteLine($"you notice a weathered signpost planted in the middle of the field. \nThe sign provides directions for travelers:");
                 Console.WriteLine("1: Look around");
                 Console.WriteLine("2: West -> Bridge");
