@@ -11,7 +11,7 @@ public static class Program
 
         Console.WriteLine("Welcome to our game what is your name.");
         string name_of_player = Console.ReadLine();
-        Player player = new(5, 1, 1, 10, name_of_player);
+        Player player = new(5, 6, 1, 10, name_of_player);
 
         Console.WriteLine($"Welcome {player.Name}");
 
@@ -300,6 +300,7 @@ public static class Program
                         string testOption = Console.ReadLine();
 
                         if(testOption == "Y"){
+                            // Hier moet de Quest beginnen
                             Console.WriteLine("Quest gelukt!");
                             Quest2 = true; 
                         }
