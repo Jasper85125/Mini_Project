@@ -23,7 +23,7 @@ public static class Program
             compass1.DrawCompass();
 
             //start the writing
-            Console.WriteLine($"You are currently home what would you like to do.");
+            Console.WriteLine($"You are currently {World.LocationByID(player.CurrentLocation).Name} what would you like to do.");
             Console.WriteLine("1: look around");
             Console.WriteLine("2: leave the house");
             Console.WriteLine("3: go back to bed");
@@ -36,18 +36,20 @@ public static class Program
             else if(choice1 == "2")
             {
                 Console.WriteLine("you open the door and walk to Town square");
-                //World.LocationByID(player.CurrentLocation.LocationToNorth);
+                player.CurrentLocation = 2;
                 Console.WriteLine(player.CurrentLocation);
             }
             else if(choice1 == "3")
             {
                 Console.WriteLine("You go back to bed, but cant sleep better go do somting");
+                break;
             }
             else
             {
                 Console.WriteLine("That is not a valid input");
             }
         }
+        
         Compass compass2 = new Compass(north: "Y", east: "Y", south: "Y", west: "Y");
         compass2.DrawCompass();
 
