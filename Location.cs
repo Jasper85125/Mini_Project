@@ -120,13 +120,13 @@ public class Location
     //     }  
     // }
 
-    public void QuestAvailableHere()
-    {
+    // public void QuestAvailableHere()
+    // {
 
-    }
+    // }
 
-    public void MonsterLivingHere()
-    {
+    // public void MonsterLivingHere()
+    // {
 
-    }
+    // }
 }
