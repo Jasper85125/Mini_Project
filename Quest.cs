@@ -13,9 +13,4 @@ public class Quest
         this.QuestCompleted = false;
     }
 
-    public void QuestIsCompleted(){
-        this.QuestCompleted = true;
-        return QuestCompleted;
-    }
-
 }

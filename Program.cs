@@ -15,6 +15,14 @@ public static class Program
 
         Console.WriteLine($"Welcome {player.Name}");
 
+        bool QuestActive1 = false;
+        bool QuestActive2 = false; 
+        bool QuestActive3 = false;
+
+        bool Quest1 = false;
+        bool Quest2 = false; 
+        bool Quest3 = false; 
+
         bool keepGaming = true; 
         while(keepGaming)
         {
@@ -195,9 +203,17 @@ public static class Program
                 }
                 else if(choice1 == "4")
                 {
-                    Console.WriteLine("Hier krijgt de user een dikke vette quest");
+                    if(Quest2 == false){
+                        Console.WriteLine("The farmer gives you the following quest:");
+                        Console.WriteLine(World.QuestByID(2).Description);
+                        QuestActive2 = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You already helped the farmer, he is very thankfull!");
+                    }
                 }
-                else if (choice3 == "Q")
+                else if (choice1 == "Q")
                 {
                     keepGaming = false;
                     break;
@@ -207,6 +223,68 @@ public static class Program
                     Console.WriteLine("That is not a valid input");
                 }
             }
+
+            //FARMER'S FIELD
+            while(player.CurrentLocation == 7)
+            {
+                Compass compass7 = new Compass(north: "N", east: "Y", south: "N", west: "Y");
+
+                //draw compass
+                compass7.DrawCompass();
+
+                Console.WriteLine($"You arive at the {World.LocationByID(player.CurrentLocation).Name}.");
+                Console.WriteLine($"You walk into a big field");
+                Console.WriteLine("1: Look around");
+                Console.WriteLine("2: East -> Farmhouse");
+                Console.WriteLine("3: Fight the snakes!");
+                Console.WriteLine("Q to quit the game");
+                string choice7 = Console.ReadLine();
+
+                if(choice7 == "1")
+                {
+                    // returns the locations
+                    Console.WriteLine(World.LocationByID(player.CurrentLocation).Description);
+                }
+                else if(choice7 == "2")
+                {
+                    Console.WriteLine("You go back to the farm house.");
+                    player.CurrentLocation = 6;
+                }
+                else if(choice7 == "3")
+                {
+                    if(Quest2 == false && QuestActive2 == true){
+                        Console.WriteLine("Hier moet Quest 2 komen, Type 'Y' om de Quest te 'voltooien'");
+                        string testOption = Console.ReadLine();
+
+                        if(testOption == "Y"){
+                            Console.WriteLine("Quest gelukt!");
+                            Quest2 = true; 
+                        }
+                        else{
+                            Console.WriteLine("Probeer het nog een keer.");
+                        }
+                    }
+                    else if(Quest2 == false && QuestActive2 == false)
+                    {
+                        Console.WriteLine("Go talk to the farmer");
+                    }
+                    else{
+                        Console.WriteLine("The snakes are already dead");
+                    }
+                }
+                else if (choice7 == "Q")
+                {
+                    keepGaming = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("That is not a valid input");
+                }
+            }
+
+
+
 
             //BRIDGE
             while(player.CurrentLocation == 8)
@@ -241,7 +319,7 @@ public static class Program
                     Console.WriteLine("As you get closer too the spider field you start noticing more and more tangled spider webs!");
                     player.CurrentLocation = 9;
                 }
-                else if (choice3 == "Q")
+                else if (choice8 == "Q")
                 {
                     keepGaming = false;
                     break;
